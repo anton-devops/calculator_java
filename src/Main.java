@@ -5,14 +5,9 @@ public class Main {
     public static void main(String[] args) throws IOException, IndexOutOfBoundsException, Exception {
         System.out.println("Input arithmetic expression:");
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            String input = scanner.nextLine();
-            System.out.println("Output:");
-            System.out.println(calc(input));
-            if (input == "exit") {
-                throw new Exception("Exit");
-            }
-        }
+        String input = scanner.nextLine();
+        System.out.println("Output:");
+        System.out.println(calc(input));
     }
 
     public static String calc(String input) throws IOException, IndexOutOfBoundsException, Exception {
@@ -37,9 +32,9 @@ public class Main {
         // count all operators:
         int countOfOperators = (
                 preparedInputString.split("\\+").length - 1 +
-                        preparedInputString.split("\\-").length - 1 +
-                        preparedInputString.split("\\*").length - 1 +
-                        preparedInputString.split("\\/").length - 1
+                preparedInputString.split("\\-").length - 1 +
+                preparedInputString.split("\\*").length - 1 +
+                preparedInputString.split("\\/").length - 1
         );
 
         if (countOfOperators > 1) {
